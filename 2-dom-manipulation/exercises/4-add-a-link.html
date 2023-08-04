@@ -39,7 +39,16 @@
         <script id="dom-manipulation-script">
           'use strict';
           debugger;
-
+          const newLink = document.createElement('a');
+          
+          //Why this doesn't work? Had to change .childNodes to .children!
+          newLink.href = document.getElementById('expected').children[1].href;
+          //Tried two ways of doing this, copying from the actual one and creating new values.
+          //The first one means that it gets updated if for some reason the copied values change
+          newLink.target = '_blank';
+          newLink.innerText = 'Mr. Traversy does it again!';
+          document.getElementById('actual').appendChild(newLink);
+          
           // write me! (... without using cloneNode, that's kind of cheating)
         </script>
       </div>

@@ -16,36 +16,68 @@
     <link rel="stylesheet" type="text/css" href="../style.css" />
   </head>
 
-  <body>
-    <header>
-      <h2>start from nothing!</h2>
-    </header>
+    <body>
+      <header>
+        <h2>start from nothing!</h2>
+      </header>
 
-    <section class="things-to-study">
-      <div id="side to inspect" class="exercise-output">
-        <div id="expected">
-          <h2>a list of things</h2>
-          <ul start="0">
-            <li>robots</li>
-            <li>solar systems</li>
-            <li>
-              <a href="https://www.badgerbadgerbadger.com" expected="_blank"
-                >learn about badgers</a
-              >
-            </li>
-            <li>oil</li>
-          </ul>
+      <section class="things-to-study">
+        <div id="side to inspect" class="exercise-output">
+          <div id="expected">
+            <h2>a list of things</h2>
+            <ul start="0">
+              <li>robots</li>
+              <li>solar systems</li>
+              <li>
+                <a href="https://www.badgerbadgerbadger.com" expected="_blank"
+                  >learn about badgers</a
+                >
+              </li>
+              <li>oil</li>
+            </ul>
+          </div>
+
+          <div id="actual"></div>
+
+          <script id="dom-manipulation-script">
+            'use strict';
+            debugger;
+
+            const actualTitle = document.createElement('h2');
+            const expectedReference = document.getElementById('expected').children[0].innerText;
+            const newItem = actualTitle.innerHTML = expectedReference;
+            document.getElementById('actual').appendChild(actualTitle);
+
+            const actualList = document.createElement('ul');
+            actualList.start = 0;
+            document.getElementById('actual').appendChild(actualList);
+
+            const expectedListItems = document.getElementById('expected').getElementsByTagName('li');
+            for (let i = 0; i < expectedListItems.length; i++) {
+            const newItem = document.createElement('li');
+            newItem.innerText = expectedListItems[i].innerText;
+            actualList.appendChild(newItem);
+            }
+
+            document.getElementById('actual').children[1].children[2].removeAttribute('innerText');
+
+            const linkListItem = document.createElement('a');
+            linkListItem.href = "https://www.badgerbadgerbadger.com";
+            linkListItem.innerText = "learn about badgers";
+            document.getElementById('actual').children[1].children[2].appendChild(linkListItem);
+            
+
+            
+            //document.getElementById('actual').children[1].children[2].children[0].href = "https://www.badgerbadgerbadger.com";
+            
+            //document.getElementsByTagName('a').href = document.getElementById('expected').children[1].children[2].href;   
+            
+            
+
+
+            // write me! (... without using cloneNode, that's kind of cheating)
+          </script>
         </div>
-
-        <div id="actual"></div>
-
-        <script id="dom-manipulation-script">
-          'use strict';
-          debugger;
-
-          // write me! (... without using cloneNode, that's kind of cheating)
-        </script>
-      </div>
 
       <div id="mocha" class="mocha-output"></div>
 

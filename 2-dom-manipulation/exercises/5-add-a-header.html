@@ -43,6 +43,19 @@
         <script id="dom-manipulation-script">
           'use strict';
           debugger;
+          // Creating the element declaring a variable for usability
+          const title = document.createElement('h1');
+          //Adding the text
+          title.innerText = 'a list of things';
+
+          // Declaring the new element and then adding it on top of other childrens in this node.
+          const firstChild = document.getElementById('actual').children[0];
+          document.getElementById('actual').insertBefore(title, firstChild);
+          
+          // Modifying the element with the one at 'expected'
+          document.getElementById('actual').children[1].children[1].innerText
+          = document.getElementById('expected').children[1].children[1].innerText;
+
 
           // write me! (... without using cloneNode, that's kind of cheating)
         </script>

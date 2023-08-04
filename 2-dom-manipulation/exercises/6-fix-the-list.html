@@ -45,6 +45,31 @@
           'use strict';
           debugger;
 
+          //Title part
+          const actualTitle = document.createElement('h1');
+          actualTitle.innerText = 'a list of things';
+
+          const actualFirstChild = document.getElementById('actual').children[0];
+
+          document.getElementById('actual').insertBefore(actualTitle, actualFirstChild);
+          
+          // UL part
+          const actualOl = document.getElementById('actual').children[1];
+          document.getElementById('actual').removeChild(actualOl);
+          const actualList = document.createElement('ul');
+          //document.getElementById('actual').ac
+          document.getElementById('actual').appendChild(actualList);
+
+          // getting all the li items automatically , this one took me ages
+
+          const expectedListItems = document.getElementById('expected').getElementsByTagName('li');
+          for (let i = 0; i < expectedListItems.length; i++) {
+          const newItem = document.createElement('li');
+          newItem.innerText = expectedListItems[i].innerText;
+          actualList.appendChild(newItem);
+          }
+          
+      
           // write me! (... without using cloneNode, that's kind of cheating)
         </script>
       </div>
