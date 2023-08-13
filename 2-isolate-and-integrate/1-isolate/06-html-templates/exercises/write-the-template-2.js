@@ -7,7 +7,8 @@
  * @returns {string} an HTML string
  */
 const renderSummaryDetails = (caption, mainText) => {
-  return `<details>\n` + `  _\n` + `  _\n` + `</details>`;
+  return `<details>\n  ` + `<summary>${caption}</summary>\n  ` + `<p>${mainText}</p>\n` + `</details>`;
+  console.log(renderSummaryDetails);
 };
 
 const _1_tallThings = renderSummaryDetails(
@@ -31,7 +32,7 @@ console.assert(
 );
 
 const divEl = document.createElement('div');
-
+//testEl.appendChild(divEl);
 divEl.innerHTML = _1_tallThings;
 divEl.innerHTML += _2_shortThings;
 console.log(divEl);

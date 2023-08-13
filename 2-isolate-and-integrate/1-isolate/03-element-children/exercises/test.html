@@ -1,6 +1,10 @@
+<html>
+  <body>
+    <script>
+
 'use strict';
 
-const { array } = require("yargs");
+//const { array } = require("yargs");
 
 const divEl = document.createElement('ul');
 divEl.innerHTML = `
@@ -18,15 +22,18 @@ divEl.innerHTML = `
   </table>
 `;
 console.log(divEl.nodeName, divEl.cloneNode(true));
-
+debugger
 // --- write some code ---
 //  you will need to access and update each <td> element
+
+// Think you can put expectedInnerHTML before so i dont have to use this.
 const arrayReference = ['a', 'b', 'c', 'd']
 let a = 0;
 for (const child of divEl.getElementsByTagName('td')) {
   child.innerHTML = arrayReference[a];
   a += 1;
 }
+//My finest creation!
 // --- --- --- --- --- ---
 
 console.log(divEl.nodeName, divEl.cloneNode(true));
@@ -42,3 +49,6 @@ for (let i = 0; i < 2; i++) {
     console.assert(actual === expected, `expected "${expected}"`);
   }
 }
+    </script>
+  </body>
+</html>

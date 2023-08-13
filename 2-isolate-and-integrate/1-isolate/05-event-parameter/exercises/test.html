@@ -1,3 +1,9 @@
+<html>
+    <body>
+        <div id="test">
+            </div>
+        <script>
+
 'use strict';
 
 const headerEl = document.createElement('h1');
@@ -11,7 +17,7 @@ document.getElementById('test').append(headerEl);
 
 const changeHeaderTextHandler = (event) => {
 let input = prompt('Write Sumth');
-  headerEl.innerHTML = input;
+  event.target.innerHTML = input;
 };
 
 headerEl.addEventListener('click', changeHeaderTextHandler);
@@ -25,3 +31,8 @@ console.log('after 1st click:', headerEl.cloneNode(true));
 const clickEvent2 = new Event('click');
 headerEl.dispatchEvent(clickEvent2);
 console.log('after 2nd click:', headerEl.cloneNode(true));
+
+
+        </script>
+    </body>
+</html>

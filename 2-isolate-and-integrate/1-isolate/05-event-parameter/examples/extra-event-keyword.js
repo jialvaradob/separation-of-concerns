@@ -11,7 +11,7 @@
 
 const buttonEl = document.createElement('button');
 
-const demoHandler = () => {
+const demoHandler = (event) => {
   // no parameter!
   // yet the function behaves no differently
 

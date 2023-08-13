@@ -10,7 +10,7 @@ const buttonEl = document.createElement('button');
 buttonEl.innerHTML = 'initial text';
 console.log(buttonEl.nodeName, buttonEl.cloneNode(true));
 
-const updateInnerHTMLHandler = () => {
+const updateInnerHTMLHandler = (event) => {
   const newInnerHTML = prompt('enter new button text');
   if (newInnerHTML === null) {
     return;

@@ -1,12 +1,14 @@
-'use strict';
 
-// fill in the _s
 
+<html>
+  <body>
+    <script>'use strict';
+      
 const buttonEl = document.createElement('button');
 buttonEl.innerHTML = 'log in';
 console.log(buttonEl.nodeName, buttonEl.cloneNode(true));
 
-const _ = () => {
+const loginHandler = () => {
   const username = prompt('enter your user name');
   if (username === null) {
     return;
@@ -19,12 +21,18 @@ const _ = () => {
   alert(`welcome, ${username}`);
 };
 
-buttonEl.addEventListener('hover', authenticationHandler);
+// add the event listener to the button so a user can login
+buttonEl.addEventListener('click', loginHandler);
 
-// "hover" over the button once
-const clickEvent1 = new Event('hover');
+// "click" the button once
+const clickEvent1 = new Event('click');
 buttonEl.dispatchEvent(clickEvent1);
 
-// "hover" over the button again
-const clickEvent2 = new Event('hover');
+// "click" the button again
+const clickEvent2 = new Event('click');
 buttonEl.dispatchEvent(clickEvent2);
+
+    </script>
+  </body>
+</html>
+
